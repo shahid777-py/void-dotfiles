@@ -1,0 +1,325 @@
+super + p
+	mpc toggle
+#/l super + e
+# 	prompt "Exit the Session " "killall dwm"
+# super + c
+# 	st -e "calcurse"
+super + slash
+	alacritty -e nvim
+# super + backslash
+# 	boomer
+# 	st -e bc -lq
+	# wmctrl -l |  rg "iex" &&  xdotool exec clear
+	# x=$(cat /proc/$(xdotool getwindowpid $(xdotool getwindowfocus))/comm) && notify-send $x
+# ctrl + l
+# 	CC=$(xdotool getactivewindow getwindowname); [ "$CC" = "iex" ] && (xdotool type "clear" && xdotool key Return)
+
+alt + BackSpace
+	bunch_scripts.sh
+# super + shift + u
+# 	dmenuumount
+super + shift + m
+	dmenumount
+# super + shift + m
+# 	dmenu-edit-configs.sh
+# super + i
+# 	xcalib -invert -alter
+super + w
+	chromium
+
+super + n
+	$TERMINAL -e nvim -c VimwikiIndex
+super + shift + n
+	$TERMINAL -e newsboat; pkill -RTMIN+6 dwmblocks
+super + v
+	$TERMINAL -e ncmpcpp
+alt + super
+	$TERMINAL
+alt + d
+	wal --theme ~/.dracula.json
+alt + u
+	wal --theme ~/.default_colors.json
+
+alt + g
+	wal --theme ~/.gruvbox.json
+# super + u
+# 	xrdb Xresources && pkill -SIGTRAP $(dwmbar)
+super + Print
+	 shot.sh -a
+alt + space
+	 xset r rate 300 50 && setxkbmap -option caps:escape ; setxkbmap -option print:print && setxkbmap -option caps:swapescape
+alt + p
+	pidof picom && pkill picom || picom -b
+	# pidof picom && pkill picom || picom --config ~/.config/picom_no_blur.conf -b
+
+
+alt + 9
+	stop_Recording && notify-send "Stopped"
+# alt + j
+# 	notify-send "📓Jupyter lab" && jupyter lab
+alt + 0
+	notify-send "🎥 Rec Started" && screen_cast
+super + ctrl + m
+	$TERMINAL -e alsamixer
+# super + u
+# 	$TERMINAL -e "nmtui-connect"
+alt  + Return
+	kitty
+	# kitty -e "tmux_check"
+# alt + p
+# 	notify-send "📔Pluto opening" && julia ~/.local/bin/pluto.jl
+
+# alt + l
+# 	lockscreen
+super + e
+	alacritty -e ranger
+	# alacritty -e "neomutt"
+super + d
+	dmenu_run -p "Apps" -fn "mono-16"
+super + shift + u
+	dmenuumount
+# super + shift + i
+# 	wiki-pages
+ctrl + super + p
+	pavucontrol
+# super + shift + o
+# 	hkcf
+Print
+	shot.sh -f
+# super + shift + t
+# 	$TERMINAL -e "tty-clock"
+# Open Webcam
+
+# super + c
+# 	cam
+alt + w
+	wifi_menu.sh
+
+XF86AudioRaiseVolume
+	vol_up
+XF86AudioLowerVolume
+	vol_down
+XF86MonBrightnessUp
+	xbacklight -inc 10; dunstify 'brightness up'; pkill -RTMIN+22 dwmblocks
+XF86MonBrightnessDown
+	xbacklight -dec 10; dunstify 'brightness down'; pkill -RTMIN+22 dwmblocks
+# super + grave
+# 	dmenuunicode
+XF86AudioMute
+	vol_mute_toggle ; pkill -RTMIN+11 dwmblocks
+# super + x
+# 	$TERMINAL -e "calcurse"
+alt + period
+	pamixer -i 10 && pkill -RTMIN+10 dwmblocks
+alt + comma
+	pamixer -d 10 && pkill -RTMIN+10 dwmblocks
+
+# alt + w
+# 	dunstify " Wiki opening" &&  cd  ~/Wikipedia-Offline/;./serve.py; echo  "http://localhost:9454/" |  clipcopy
+	# wifi on && notify-send " wifi on 📡"  && pkill -RTMIN+8 dwmblocks
+alt + shift + w
+	st -e nmtui
+super + shift + u
+	dmenuumount
+super + shift + e
+	wiki-scripts
+# super + shift + plus
+# 	brightness_5 ; pkill -RTMIN+22 dwmblocks
+# super + shift + minus
+# 	brightness_dec_5 ; pkill -RTMIN+22 dwmblocks
+super + shift + i
+	wiki-pages
+ctrl + period
+	xbacklight -inc 5
+	# brightness_5 ; pkill -RTMIN+22 dwmblocks
+ctrl + comma
+	xbacklight -dec 5
+# super + shift + t
+# 	$TERMINAL -e "tty-clock"
+# Open Webcam
+
+super + shift + w
+	dmenu-edit-configs.sh
+alt + shift + w
+	wifi off && notify-send " wifi off 睊"
+# alt + p
+# 	pidof polybar && pkill polybar || pb
+alt + shift + p
+	pidof picom && killall picom || (picom --experimental-backends -b && notify-send "Blur Enabled")
+alt + m
+	cmop
+alt + shift + m
+	$TERMINAL -e "cmni"
+# alt + 1
+# 	help_keys.sh
+super + shift + x
+	$TERMINAL -e nvim ~/.xprofile
+alt + e
+	zathura ~/Books/Books/Computer_science_books/Languages/Python/automatetheboringstuffwithpython_new.pdf
+alt + shift + l
+	wiki-local-pages
+super + r
+		cd "`xcwd`" &&  _START_LFCD=1 alacritty
+	# st -e lfrun
+	# lfcd_new
+# $TERMINAL -e  lf
+
+# super + Return
+# 	$TERMINAL
+#i3 focus mode_toggle
+# alt + x
+# 	xrdb ~/Xresources && pkill -SIGTRAP $(dwmbar)
+alt + shift + x
+	setbg
+super + shift + p
+	dolphin
+alt + shift + n
+	nm.sh
+# alt + n
+# 	killall redshift;sleep 3;redshift -l 13.10:80.28 -t 5333:4600 -g 1.000 && notify-send " Night Mode ON"
+alt + n
+	exec slock
+# alt + n
+# 	night_mode.sh
+alt + m
+	cmop
+alt + shift + m
+	$TERMINAL -e "cmni"
+# alt + 1
+# 	xrdb ~/Xresources
+alt + shift + h
+	$TERMINAL -e "help_keys_edit.sh"
+super + shift + x
+	$TERMINAL -e nvim ~/.xprofile
+alt + shift + l
+	wiki-local-pages
+
+# alt + x
+# 	xrdb ~/.Xresources
+alt + shift + x
+	setbg
+super + shift + p
+	pcmanfm
+# alt + k
+# 	pid of screenkeys || screenKeys.sh
+# alt + shift + k
+# 	pkill screenkey
+super + w
+	brave
+# super + d
+# 	exec ~/.config/rofi/launchers/text/launcher.sh
+ # rofi -show drun
+super + g
+	$TERMINAL -e ytop
+super + BackSpace
+	prompt "Reboot Computer ?" "sudo reboot"
+super + shift + b
+	xbacklight -set 15; pkill -RTMIN+22 dwmblocks
+super + shift + BackSpace
+	prompt "Shutdown Computer ?" "sudo poweroff"
+super + shift + d
+	killall dunst; exec notify-send 'restart dunst'
+
+
+
+
+#          _                                                    __ _
+#         | |__  ___ _ ____      ___ __ ___     ___ ___  _ __  / _(_) __ _
+#         | '_ \/ __| '_ \ \ /\ / / '_ ` _ \   / __/ _ \| '_ \| |_| |/ _` |
+#         | |_) \__ \ |_) \ V  V /| | | | | | | (_| (_) | | | |  _| | (_| |
+#         |_.__/|___/ .__/ \_/\_/ |_| |_| |_|  \___\___/|_| |_|_| |_|\__, |
+#                   |_|                                              |___/
+
+
+#--------------BSPWM---Binds---------#
+# super + q
+# 	xdo kill
+#bspc node -{c,k}
+# super + e
+# 	prompt "Exit the session" "bspc quit "
+# rotate current node 90 degrees
+# super + y
+# 	bspc node @focused:/ -R 90
+
+# super + space
+# 	bspc node -s biggest.local || bspc node -s next.local
+
+# focus the node in the given direction
+# super + {j,k}
+#  	bspc node -f {next.local,prev.local}
+# super + shift + {h,j,k,l}
+# 	bspc node -f -s  {west,south,north,east}
+# Window Sticky/Non-Sticky
+# alt + space
+# 	bspc node -g sticky={on,off}
+# Toggle No Gaps & Default Gaps
+# super + shift + q
+# 	bspc config window_gap {0,15}
+# Restart BSPWM Config
+# super + shift + c
+# 	bspc wm -r #&& pb  #&& setbg && sleep 1;  xrdb ~/.Xresources
+
+#---Worksapce-Setting----#
+# super + {_,shift + }{1-9}
+# 	bspc {desktop -f,node -d} '^{1-9}' --follow
+
+# Switch Last Desktop Back N Forth
+# super + b
+# 	bspc desktop last -f
+
+#  Toggle (Focus Biggest & Previous ) Node
+# super + n
+# 	bspc node --focus {biggest.\local,last.local}
+
+
+# super + shift + n
+# 	pkill -f master-slave.sh  && bspc node @/ -E
+
+# Full Screen
+# super + f
+# 	bspfullscreen
+# Toggle floating on and off
+# super + shift + space
+# 	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+# Toggle Focus on Floating
+# alt + shift + space
+# 	bspc  --focus floating.node
+
+
+# Move a window to a desktop but don't go there
+# alt + shift + {0-9}
+# 	bspc node -d {0-9}
+# Jumping to each Desktops.
+# super + ctrl {j,k}
+# 	bspc desktop -f {prev, next}
+# Expand a window by moving one of its side outward
+
+ ### RESIZING ####
+
+# super + {h,l}
+# 	{bspwm_resize,bspwm_resize_inc}
+
+# alt + shift + underscore
+# 	bspc node focused -z {left -30 0}
+# alt + shift + plus
+# 	bspc node focused -z {left 30 0}
+
+# Resize Gap (Inner & Outer)
+# super { ,+ shift }+ z
+# 	bspc config window_gap $(($(bspc config window_gap) {+,-} 3))
+
+
+# Hide a window
+# super + shift + minus
+# 	bspc node -g hidden
+# Unhide a window
+# super + minus
+# 	bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
+
+# Rotate leaves of tree
+# super + r
+# 	bspc node @focused:/ -R 180 && bspc node -f biggest.local
+# super + ctrl + backspace
+# 	xdo hide -dr
+# alt + {j,k}
+# 	bspc node  focused.local -z {top 0 30,top 0 -30}

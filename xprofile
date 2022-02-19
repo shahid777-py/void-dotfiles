@@ -1,0 +1,18 @@
+#!/bin/sh
+#WINIT_HIDPI_FACTOR=1
+#WINIT_X11_SCALE_FACTOR=1
+xwallpaper --zoom ~/.config/wall.jpg &
+remaps &	# Remap caps key esc & speedy keys
+sxhkd -m -1 & 	#(To escape xbind keys)
+# setbg & 	#(Pywal and wall)
+ picom -b &
+pamixer --set-volume 75 &
+xbacklight -set 20 &
+dwmblocks &
+#flashfocus &
+pipewire &
+pipewire-pulse &
+pipewire-media-session &
+bluetooth off &
+wifi off &
+emacs --daemon &
